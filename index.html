@@ -6,13 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>DOM</title>
 </head>
 
 <body>
-    <section id="principal" class="container-fluid">
+
+    <section id="principal" class="container-fluid light">
+        <nav class="navbar bg-body-tertiary justify-content-end">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="modeSwitch">
+                <label class="form-check-label" for="modeSwitch">Modo oscuro</label>
+            </div>
+        </nav>
 
         <article id="articulo">
             <h1 id="titulo">Menú del día</h1>
@@ -25,49 +33,53 @@
             <article class=" mx-3">
             <p class="parrafo">Filtrar:</p>
             </article>
+            
+
             <article class="mx-3">
-                <select class="form-select container-fluid mx-autop-5 text-center" aria-label="Default select example">
-                    <option selected>Tipo de menú</option>
+                <select id="filtroTipoMenu" class="form-select container-fluid mx-autop-5 text-center" aria-label="Default select example">
+                    <option value="0" selected>Tipo de menú</option>
                     <option value="1">Omnívoro</option>
                     <option value="2">Vegetariano</option>
                     <option value="3">Sin TACC</option>
                 </select>
             </article>
+
             <article class="mx-3">
-                <select class="form-select container-fluid mx-autop-5 text-center" aria-label="Default select example">
+                <select id="filtroPrecio" class="form-select container-fluid mx-autop-5 text-center">
                     <option selected>Valor del menú</option>
-                    <option value="1">hasta $1799</option>
-                    <option value="2">Entre $1800 y $2999</option>
-                    <option value="3">Entre $3000 y $3999</option>
-                    <option value="3">Más de $4000</option>
+                    <option value="1">Entre $1000 y $2999</option>
+                    <option value="2">$3000 o más</option>
                 </select>
             </article>
-        </div>
 
     </section>
 
-    <section id="menuPlatos" class="container-fluid" style="padding: 10px">
+    <section id="menuPlatos" class="container-fluid contenedorMenu" style="width: 90%;">
         <div id="cartas" class="row d-flex justify-content-center">
         </div>
     </section>
 
-    <section id="carrito" class="container-fluid">
 
-        <div>
-            <h4 style="font-family: Patrick Hand; border:0px; color:#428C60; font-weight:500; font-size:28x;">Tu pedido:</h4>
+    <section id="carrito" class="container-fluid carro">
+
+        <div class="sectionCarrito style=" width=90%;">
+            <h4 style="font-family: Patrick Hand; border:0px; color:#D6FFE7; font-weight:500; font-size:28x;">Tu pedido:
+            </h4>
             <table class="table table-striped-columns">
                 <thead>
                     <tr>
-                        <th style="font-size: 16px; color: #428C60; font-family: Montserrat;">Menú #</th>
-                        <th style="font-size: 16px; color: #428C60; font-family: Montserrat;">Plato</th>
-                        <th style="font-size: 16px; color: #428C60; font-family: Montserrat;">Precio</th>
+                        <th style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">Menú #</th>
+                        <th style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">Plato</th>
+                        <th style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">Precio</th>
                     </tr>
                 </thead>
                 <tbody id="tablabody">
                     <!-- aqui tabla carrito -->
                 </tbody>
             </table>
-            <h4 id="total" style="font-family: Patrick Hand; border:0px; color:#428C60; font-weight:500; font-size:28x;">Total a pagar $:</h4>
+            <h4 id="total" class="bg-body-tertiary justify-content-end"
+                style="font-family: Patrick Hand; border:0px; color:#D6FFE7; font-weight:500; font-size:28x;">Total a
+                pagar $:</h4>
         </div>
     </section>
     </main>

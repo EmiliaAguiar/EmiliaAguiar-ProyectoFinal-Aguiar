@@ -1,0 +1,114 @@
+body.dark {
+   background-color: #333;
+   color: #d9fdbc;
+
+   .h1 {
+      font: bold 40px "Montserrat";
+      color: #D6FFE7;
+   }
+
+   .p {
+      color: #ffffff;
+      font: 18px "Montserrat";
+   }
+
+   .contenedorMenu {
+      background-color: #6a6a6a;
+      border-radius: 15px;
+      padding: 5%;
+   }
+
+   .sectionCarrito {
+      background-color: #6a6a6a;
+      border-radius: 15px;
+      padding: 5%;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+
+   }
+
+   .card {
+      background-color: #434343;
+      color: #D6FFE7;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+   }
+
+   .form-check-input:checked {
+      background-color: #0dfd51;
+      border-color: #0dfd51;
+   }
+
+   .btnEliminarCarrito {
+      background-color:#434343; 
+      color: #d9fdbc;
+      border:0px;
+      border-radius: 8px;
+      font-weight:500; 
+      font-size:15px;
+      font-family: "Montserrat";
+   }
+
+}
+
+body.light {
+   width: 100%;
+   background-color: #D6FFE7;
+   color: #31733e;
+
+   .h1 {
+      font: bold 40px "Montserrat";
+      color: #D6FFE7;
+   }
+
+   .p {
+      color: #21592c;
+      font: 18px "Montserrat";
+   }
+
+   .contenedorMenu {
+      background-color: #E5E2C8;
+      border-radius: 15px;
+      padding: 5%;
+   }
+
+   .card {
+      color: #428C60;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+   }
+
+
+   .carro {
+      border-radius: 15px;
+      padding: 5%;
+      color: #E5E2C8;
+      font: "Montserrat", 16px;
+
+   }
+
+
+   .sectionCarrito {
+      background-color: #428C60;
+      border-radius: 15px;
+      padding: 5%;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+
+   }
+
+   .btnEliminarCarrito {
+      background-color:#E8E8E8; 
+      border:0px;
+      border-radius: 8px;
+      color:#428C60; 
+      font-weight:500; 
+      font-size:15px;
+      font-family: "Montserrat";
+   }
+
+}
