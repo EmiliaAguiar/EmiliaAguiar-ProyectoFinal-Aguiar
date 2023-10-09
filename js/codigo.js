@@ -101,28 +101,26 @@ mostrarMensaje();
 setInterval(mostrarMensaje, 1000);
 
 
-// Cartas de platos
+/// Cartas de platos
 
 function obtenerJSON() {
-    const URLJSON = '../platos.json';
+    const URLJSON = '/platos.json';
 
     fetch(URLJSON)
         .then(response => response.json())
         .then(platos => {
-            console.log(platos);
+            if (Array.isArray(platos)) {
+                console.log(platos);
 
-            const listaPlatos = platos;
-            const contenedorPlatos = document.getElementById('menuPlatos');
+                const contenedorPlatos = document.getElementById('menuPlatos');
+                contenedorPlatos.innerHTML = platos.map(plato => renderizarPlato(plato)).join('');
 
-            platos.forEach(plato => {
-                const platoHTML = renderizarPlato(plato);
-                contenedorPlatos.innerHTML += platoHTML;
-            });
+            }
         })
-        .catch(error => console.error('Error:', error));
+
 }
 
-window.onload = function() {
+window.onload = function () {
     obtenerJSON();
 }
 
@@ -147,6 +145,7 @@ function renderizarPlato(plato) {
 }
 
 let carrito = [];
+
 
 // Evento clic a los botones de compra + Tostify
 function agregarEventoClic() {

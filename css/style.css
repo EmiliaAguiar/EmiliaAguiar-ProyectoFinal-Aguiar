@@ -1,10 +1,10 @@
 /* Reseteo */
-*{
+* {
    margin: 0;
-   padding:0;
+   padding: 0;
    box-sizing: border-box;
    list-style: none;
-   
+
 }
 
 .zoom-in {
@@ -129,13 +129,13 @@ body.dark {
       text-transform: uppercase;
    }
 
-.btnAgregarAlPedido {
-   background-color: #428C60;
+   .btnAgregarAlPedido {
+      background-color: #428C60;
       color: #D6FFE7;
       border: 0px;
       font-family: "Montserrat";
       text-transform: uppercase;
-}
+   }
 
    .btnPago {
       background-color: #428C60;
