@@ -144,12 +144,12 @@ function agregarEventoClic() {
                 newWindow: true,
                 close: false,
                 gravity: "right",
-                position: "center", 
+                position: "center",
                 style: {
                     background: "linear-gradient(to right, #e8fcab, #92e842)",
-                    'text-align': 'center', 
+                    'text-align': 'center',
                     'font-family': 'Montserrat',
-                    'color':'#424242',
+                    'color': '#424242',
                 },
             }).showToast();
         });
@@ -181,17 +181,17 @@ for (const plato of platos) {
 }
 agregarEventoClic();
 
-
 // Eliminar platos al carrito
 
 function eliminarDelCarrito(id) {
     carrito = carrito.filter(plato => plato.id !== id);
     actualizarTabla();
     guardarCarritoEnLocalStorage();
+
+
 }
 
 
-// Actualizar tabla del carrito
 function actualizarTabla() {
     tablaBody.innerHTML = '';
     carrito.forEach(plato => {
