@@ -1,0 +1,415 @@
+body.dark {
+   background-color: #333;
+   color: #d9fdbc;
+
+   .h1 {
+      font: bold 40px "Montserrat";
+      color: #D6FFE7;
+   }
+
+   .p {
+      color: #ffffff;
+      font: 18px "Montserrat";
+   }
+
+   .contenedorMenu {
+      background-color: #6a6a6a;
+      border-radius: 15px;
+      padding: 5%;
+   }
+
+   .sectionCarrito {
+      background-color: #6a6a6a;
+      border-radius: 15px;
+      padding: 5%;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+
+   }
+
+   .card {
+      background-color: #434343;
+      color: #D6FFE7;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+   }
+
+   .form-check-input:checked {
+      background-color: #0dfd51;
+      border-color: #0dfd51;
+   }
+
+   .btnEliminarCarrito {
+      background-color: #434343;
+      color: #d9fdbc;
+      border: 0px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 15px;
+      font-family: "Montserrat";
+   }
+
+   /* Pop-up Finalizar compra */
+
+   .popup {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: #070707c4;
+      padding-top: 60px;
+   }
+
+   .popup-content {
+      background-color: #5f5f5f;
+      color: #D6FFE7;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      border: 0;
+      border-radius: 15px;
+      margin: 5% auto;
+      padding: 20px;
+      width: 60%;
+   }
+
+   .h2 {
+      font-family: "Montserrat";
+      font-size: 20px;
+   }
+
+   .h5 {
+      font-family: "Patrick Hand";
+   }
+
+   .popup-close {
+      position: absolute;
+      align-content: left;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #428C60;
+   }
+
+   .totalPopup {
+      font: 22px "Patrick Hand";
+      color: #D6FFE7;
+      border-radius: 15px;
+      width: 100%;
+   }
+
+   .btnComprar {
+      background-color: #428C60;
+      color: #D6FFE7;
+      border: 0px;
+      font-family: "Montserrat";
+      text-transform: uppercase;
+   }
+
+   .btnPago {
+      background-color: #428C60;
+      color: #D6FFE7;
+      border: 0px;
+      font-family: "Montserrat";
+      text-transform: uppercase;
+      margin: 10px;
+   }
+
+   .form-check-label {
+      background-color: #E8E8E8;
+      border: 0px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #428C60;
+      font-weight: 500;
+      font-size: 18px;
+      border-radius: 15px;
+      padding-left: 10%;
+      padding-right: 10%;
+   }
+
+   .precioSinDescuento {
+      text-decoration: line-through;
+      color: red;
+      font-family: 'Montserrat';
+      font-size: 16px;
+   }
+
+   .descuentoAplicado {
+      background-color: #E8E8E8;
+      border: 0px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #428C60;
+      font-weight: 500;
+      font-size: 16px;
+      border-radius: 15px;
+      font-family: "Montserrat";
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .agradecimiento {
+      background-color: #428C60;
+      border: 0px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #E8E8E8;
+      font-weight: 500;
+      font-size: 16px;
+      border-radius: 15px;
+      font-family: "Montserrat";
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .mensajeError {
+      background-color: red;
+      color: white;
+      border: 0px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #E8E8E8;
+      font-weight: 500;
+      font-size: 16px;
+      border-radius: 15px;
+      font-family: "Montserrat";
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+}
+
+body.light {
+   width: 100%;
+   background-color: #D6FFE7;
+   color: #31733e;
+
+   .h1 {
+      font: bold 40px "Montserrat";
+      color: #D6FFE7;
+   }
+
+   .p {
+      color: #21592c;
+      font: 18px "Montserrat";
+   }
+
+   .contenedorMenu {
+      background-color: #E5E2C8;
+      border-radius: 15px;
+      padding: 5%;
+   }
+
+   .card {
+      color: #428C60;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+   }
+
+
+   .carro {
+      border-radius: 15px;
+      padding: 5%;
+      color: #E5E2C8;
+      font: "Montserrat", 16px;
+
+   }
+
+
+   .sectionCarrito {
+      background-color: #428C60;
+      border-radius: 15px;
+      padding: 5%;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+
+   }
+
+   .btnEliminarCarrito {
+      background-color: #E8E8E8;
+      border: 0px;
+      border-radius: 8px;
+      color: #428C60;
+      font-weight: 500;
+      font-size: 15px;
+      font-family: "Montserrat";
+   }
+
+
+   /* Pop-up Finalizar compra */
+
+   .popup {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: #d6ffe797;
+      padding-top: 60px;
+   }
+
+   .popup-content {
+      background-color: #fefded;
+      color: #428C60;
+      -webkit-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      -moz-box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      box-shadow: -13px 9px 33px -15px rgba(0, 0, 0, 0.55);
+      border: 0;
+      border-radius: 15px;
+      margin: 5% auto;
+      padding: 20px;
+      width: 60%;
+   }
+
+   .h2 {
+      font-family: "Montserrat";
+      font-size: 20px;
+   }
+
+   .h5 {
+      font-family: "Patrick Hand";
+   }
+
+   .popup-close {
+      position: absolute;
+      align-content: left;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #428C60;
+   }
+
+   .totalPopup {
+      font: 22px "Patrick Hand";
+      color: rgb(66, 140, 96);
+      border-radius: 15px;
+      width: 100%;
+   }
+
+
+
+   .btnComprar {
+      color: #428C60;
+      background-color: #D6FFE7;
+      border: 0px;
+      font-family: "Montserrat";
+      text-transform: uppercase;
+   }
+
+   .btnPago {
+      background-color: #428C60;
+      color: #D6FFE7;
+      border: 0px;
+      font-family: "Montserrat";
+      text-transform: uppercase;
+      margin: 10px;
+   }
+
+
+   .form-check-label {
+      background-color: #E8E8E8;
+      border: 0px;
+      padding: 5px;
+      color: #428C60;
+      font-weight: 500;
+      font-size: 15px;
+      border-radius: 15px;
+      padding-left: 10%;
+      padding-right: 10%;
+   }
+
+   .precioSinDescuento {
+      text-decoration: line-through;
+      color: red;
+      font-family: 'Montserrat';
+      font-size: 16px;
+   }
+
+   .descuentoAplicado {
+      background-color: #E8E8E8;
+      border: 0px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #428C60;
+      font-weight: 500;
+      font-size: 16px;
+      border-radius: 15px;
+      font-family: "Montserrat";
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .agradecimiento {
+      background-color: #428C60;
+      border: 0px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #E8E8E8;
+      font-weight: 500;
+      font-size: 16px;
+      border-radius: 15px;
+      font-family: "Montserrat";
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .redirigirMP {
+      background-color: #428C60;
+      color: #E8E8E8;
+      border: 0px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 15px;
+      border-radius: 15px;
+      font-family: "Montserrat";
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+
+   .mensajeError {
+      background-color: red;
+      color: white;
+      border: 0px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #E8E8E8;
+      font-weight: 500;
+      font-size: 16px;
+      border-radius: 15px;
+      font-family: "Montserrat";
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+}

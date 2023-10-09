@@ -7,9 +7,7 @@ console.table(platos);
 
 let sectionPrincipal = document.getElementById('principal');
 console.dir(sectionPrincipal);
-sectionPrincipal.classList.add('container-fluid');
-sectionPrincipal.classList.add('mx-auto', 'p-5');
-sectionPrincipal.classList.add('text-center');
+sectionPrincipal.classList.add('container-fluid', 'mx-auto', 'p-5', 'text-center');
 
 // Creación de un nuevo elemento
 
@@ -27,7 +25,7 @@ const dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', '
 
 // Modificación de nodos  
 
-let tituloH1 = document.getElementById('titulo');
+let tituloH1 = sectionPrincipal.querySelector('#titulo');
 console.dir(tituloH1);
 let nombreDia = hoy === 0 ? dias[6] : dias[hoy];
 tituloH1.innerText = `Sugerencias del ${nombreDia}`;
@@ -57,6 +55,9 @@ articuloCartas.classList.add('my-3');
 
 articuloCartas.classList.add('container', 'row', 'justify-content-center');
 
+let tablaCarrito = document.getElementById('carrito');
+tablaCarrito.classList.add('mx-auto', 'p-5');
+tablaCarrito.classList.add('text-center');
 
 // Cuenta Regresiva
 
@@ -152,7 +153,7 @@ function agregarAlCarrito(plato) {
             <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">${plato.id}</td>
             <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">${plato.nombre}</td>
             <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">$${plato.precio}</td>
-            <td><button class="btn-eliminar btnEliminarCarrito" onclick="eliminarDelCarrito(${plato.id})"> ❌ Me arrepentí</button></td>
+            <td><button class="btn-eliminar btnEliminarCarrito" onclick="eliminarDelCarrito(${plato.id})"> ❌ No lo quiero</button></td>
         </tr>
     `;
 }
@@ -167,7 +168,7 @@ agregarEventoClic();
 function eliminarDelCarrito(id) {
     carrito = carrito.filter(plato => plato.id !== id);
     actualizarTabla();
-    guardarCarritoEnLocalStorage(); 
+    guardarCarritoEnLocalStorage();
 }
 
 function actualizarTabla() {
@@ -178,7 +179,7 @@ function actualizarTabla() {
                 <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">${plato.id}</td>
                 <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">${plato.nombre}</td>
                 <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">$${plato.precio}</td>
-                <td><button class="btn-eliminar btnEliminarCarrito" onclick="eliminarDelCarrito(${plato.id})"> ❌ Me arrepentí</button></td>
+                <td><button class="btn-eliminar btnEliminarCarrito" onclick="eliminarDelCarrito(${plato.id})"> ❌ No lo quiero</button></td>
             </tr>
         `;
     });
@@ -258,18 +259,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 filtrarPorPrecio(3000, Infinity);
         }
 
-        // Limpiar el contenedor del menú
+
         cartasContenedor.innerHTML = '';
 
         // Mostrar los platos filtrados al contenedor de cartas
 
         platosFiltrados.forEach(plato => {
             const platoFiltrado = document.createElement('div');
-            platoFiltrado.classList.add('plato', 'col-md-5', 'mb-2'); // Añadida clase col-md-5
+            platoFiltrado.classList.add('plato', 'col-md-5', 'mb-3');
             platoFiltrado.innerHTML = renderizarPlato(plato);
             cartasContenedor.appendChild(platoFiltrado);
         });
-        
+
         // Agregar acción de clic al botón
         agregarEventoClic();
     }
@@ -277,7 +278,6 @@ document.addEventListener('DOMContentLoaded', function () {
     filtroTipoMenu.addEventListener('change', actualizarPlatos);
     filtroPrecioSeleccionado.addEventListener('change', actualizarPlatos);
 });
-
 
 //Total del carrito
 
@@ -304,10 +304,10 @@ function agregarAlCarrito(plato) {
             <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">${plato.id}</td>
             <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">${plato.nombre}</td>
             <td style="font-size: 16px; color: #D6FFE7;  ; font-family: Montserrat;">$${plato.precio}</td>
-            <td><button class="btn-eliminar btnEliminarCarrito" onclick="eliminarDelCarrito(${plato.id})"> ❌ Me arrepentí</button></td>
+            <td><button class="btn-eliminar btnEliminarCarrito" onclick="eliminarDelCarrito(${plato.id})"> ❌ No lo quiero</button></td>
         </tr>
     `;
-    actualizarTotalEnDOM(); 
+    actualizarTotalEnDOM();
     guardarCarritoEnLocalStorage();
 }
 
@@ -315,7 +315,7 @@ function eliminarDelCarrito(id) {
     carrito = carrito.filter(plato => plato.id !== id);
     actualizarTabla();
     actualizarTotalEnDOM();
-    guardarCarritoEnLocalStorage(); 
+    guardarCarritoEnLocalStorage();
 }
 
 //Guardar carrito de compras en Local Storage
@@ -323,3 +323,213 @@ function eliminarDelCarrito(id) {
 function guardarCarritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+// Pop up finalizar compra
+
+document.getElementById('inputEmail4').addEventListener('input', function (event) {
+    var email = this.value;
+    var emailError = document.getElementById('emailError');
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email.match(emailPattern)) {
+        emailError.textContent = 'Por favor, ingresa un correo electrónico válido.';
+    } else {
+        emailError.textContent = '';
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Función para abrir/cerrar el popup 
+    document.getElementById('btnComprar').addEventListener('click', function () {
+        var popup = document.getElementById('popup');
+
+        popup.style.display = 'block';
+
+        document.getElementById('btnCerrarPopup').addEventListener('click', function () {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        });
+
+
+        // Mostrar el total del carrito 
+        var totalCarrito = document.getElementById('total').textContent;
+        document.getElementById('popupTotal').textContent = totalCarrito;
+    });
+
+    // Cerrar el popup 
+    document.getElementById('btnCancelar').addEventListener('click', function () {
+        var popup = document.getElementById('popup');
+
+        // Ocultar el popup
+        popup.style.display = 'none';
+
+    });
+
+});
+
+// Métodos de pago //
+
+//Efectivo
+document.getElementById('pagarEfectivo').addEventListener('click', function () {
+    var totalElement = document.getElementById('total');
+    var totalText = totalElement.textContent.trim();
+    var total = parseFloat(totalText.slice(15));
+
+    var metodoPago = "efectivo";
+
+    if (metodoPago === "efectivo") {
+        var descuento = total * 0.1;
+        var totalConDescuento = total - descuento;
+
+
+        // Mensaje de descuento
+        var mensajeDescuento = document.createElement('p');
+        mensajeDescuento.textContent = '🚀 ¡Genial, te damos un 10% de descuento! 🚀';
+        mensajeDescuento.classList.add('descuentoAplicado');
+
+        var popupTotalElement = document.getElementById('popupTotal');
+        popupTotalElement.innerHTML = `Total a pagar $${totalConDescuento.toFixed(2)}`;
+
+        popupTotalElement.appendChild(mensajeDescuento);
+
+        var totalOriginalElement = document.createElement('p');
+        totalOriginalElement.innerHTML = `Antes $${total.toFixed(2)}`;
+        popupTotalElement.appendChild(totalOriginalElement);
+        totalOriginalElement.classList.add('precioSinDescuento')
+    }
+});
+
+
+// QR
+
+document.getElementById('pagarQR').addEventListener('click', function () {
+    pagarConQR();
+});
+
+function pagarConQR() {
+    var totalElement = document.getElementById('total');
+    var totalText = totalElement.textContent.trim();
+    var total = parseFloat(totalText.slice(15));
+
+    var descuento = total * 0.05;
+    var totalConDescuento = total - descuento;
+
+
+    // Mensaje de descuento
+    var mensajeDescuento = document.createElement('p');
+    mensajeDescuento.textContent = '🚀 ¡Genial, te damos un 5% de descuento! 🚀';
+    mensajeDescuento.classList.add('descuentoAplicado');
+
+
+    var popupTotalElement = document.getElementById('popupTotal');
+    popupTotalElement.innerHTML = `Total a pagar $${totalConDescuento.toFixed(2)}`;
+
+    popupTotalElement.appendChild(mensajeDescuento);
+
+    var totalOriginalElement = document.createElement('p');
+    totalOriginalElement.innerHTML = `Antes $${total.toFixed(2)}`;
+    popupTotalElement.appendChild(totalOriginalElement);
+    totalOriginalElement.classList.add('precioSinDescuento');
+
+
+    // Imagen QR Mercado Pago
+    var imagenQR = document.createElement('img');
+    imagenQR.src = './images/qrMP.png';
+    imagenQR.alt = 'Código QR de Mercado Pago';
+    popupTotalElement.appendChild(imagenQR);
+}
+
+// Tarjetas
+
+document.getElementById('pagarTarjeta').addEventListener('click', function () {
+    pagarConTarjeta();
+});
+
+function pagarConTarjeta() {
+    var totalElement = document.getElementById('total');
+    var totalText = totalElement.textContent.trim();
+    var total = parseFloat(totalText.slice(15));
+
+    var recargo = total * 0.05;
+    var totalConDescuento = total + recargo;
+
+
+    // Mensaje de descuento
+    var mensajeDescuento = document.createElement('p');
+    mensajeDescuento.textContent = 'El pago con tarjeta tiene un 5% de recargo ⬆️ Te rederigimos a Mercado Pago para finalizar la operación';
+    mensajeDescuento.classList.add('descuentoAplicado');
+
+
+    var popupTotalElement = document.getElementById('popupTotal');
+    popupTotalElement.innerHTML = `Total a pagar $${totalConDescuento.toFixed(2)}`;
+
+    popupTotalElement.appendChild(mensajeDescuento);
+
+    var totalOriginalElement = document.createElement('p');
+    totalOriginalElement.innerHTML = `Antes $${total.toFixed(2)}.`;
+    popupTotalElement.appendChild(totalOriginalElement);
+    totalOriginalElement.classList.add('precioSinDescuento');
+}
+
+
+//Funcion botón pagar
+
+document.getElementById('btnPagar').addEventListener('click', function () {
+    var metodoPago = document.querySelector('input[name="metodoPago"]:checked').value;
+
+    if (metodoPago === 'Efectivo' || metodoPago === 'QR') {
+        var popupTotalElement = document.getElementById('popupTotal');
+        popupTotalElement.innerHTML = '';
+
+        setTimeout(function () {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }, 2500);
+
+        var mensajeAgradecimiento = document.createElement('p');
+        mensajeAgradecimiento.textContent = '😋¡Gracias por tu compra! Te enviaremos tu pedido cuanto antes. Chequeá tu mail con el seguimiento del delivery. 😋';
+        mensajeAgradecimiento.classList.add('agradecimiento');
+        popupTotalElement.appendChild(mensajeAgradecimiento);
+
+    } else if (metodoPago === 'Tarjeta') {
+        window.location.href = 'https://www.mercadopago.com.ar/', '_blank';
+    }
+
+    // Validación del formulario
+
+    var email = document.getElementById('inputEmail4').value;
+    var direccion = document.getElementById('inputAddress').value;
+    var ciudad = document.getElementById('inputCity').value;
+    var codigoPostal = document.getElementById('inputZip').value;
+
+    if (email.trim() === '' || direccion.trim() === '' || ciudad.trim() === '' ||
+        codigoPostal.trim() === '' || nombre.trim() === '' || telefono.trim() === '') {
+        var popupTotalElement = document.getElementById('popupTotal');
+        popupTotalElement.innerHTML = '';
+
+        var mensajeError = document.createElement('p');
+        mensajeError.textContent = 'Por favor completa todos los campos.';
+        mensajeError.classList.add('mensajeError');
+
+        popupTotalElement.appendChild(mensajeError);
+
+        return;
+    }
+
+    // Agradecimiento o redirección
+
+    var popupTotalElement = document.getElementById('popupTotal');
+    popupTotalElement.innerHTML = '';
+
+    if (metodoPago === 'Efectivo' || metodoPago === 'QR') {
+        var mensajeAgradecimiento = document.createElement('p');
+        mensajeAgradecimiento.textContent = '¡Gracias por tu compra! Te enviaremos tu pedido cuanto antes. Chequeá tu mail con el seguimiento del delivery. 😋';
+        mensajeAgradecimiento.classList.add('agradecimiento');
+
+        popupTotalElement.appendChild(mensajeAgradecimiento);
+    } else if (metodoPago === 'Tarjeta') {
+        window.open('https://www.mercadopago.com.ar/', '_blank');
+    }
+});
