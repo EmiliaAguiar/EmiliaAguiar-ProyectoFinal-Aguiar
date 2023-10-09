@@ -518,7 +518,7 @@ document.getElementById('btnPagar').addEventListener('click', function () {
         return;
     }
 
-    // Agradecimiento o redirección
+    // Agradecimiento o redirección según medio de pago
 
     var popupTotalElement = document.getElementById('popupTotal');
     popupTotalElement.innerHTML = '';
