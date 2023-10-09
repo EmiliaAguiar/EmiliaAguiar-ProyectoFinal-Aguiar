@@ -103,6 +103,29 @@ setInterval(mostrarMensaje, 1000);
 
 // Cartas de platos
 
+function obtenerJSON() {
+    const URLJSON = '../platos.json';
+
+    fetch(URLJSON)
+        .then(response => response.json())
+        .then(platos => {
+            console.log(platos);
+
+            const listaPlatos = platos;
+            const contenedorPlatos = document.getElementById('menuPlatos');
+
+            platos.forEach(plato => {
+                const platoHTML = renderizarPlato(plato);
+                contenedorPlatos.innerHTML += platoHTML;
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+window.onload = function() {
+    obtenerJSON();
+}
+
 function renderizarPlato(plato) {
     return `
         <div class="card mb-3" style="max-width: 540px;">
