@@ -115,7 +115,7 @@ function renderizarPlato(plato) {
                         <h5 class="card-title" style="font-size: 20px; font-family: Montserrat;">${plato.nombre}</h5>
                         <button class="btn btn-secondary" style="background-color:#E8E8E8; border:0px; color:#428C60; font-weight:500; font-size:12px;"> 🥣 Este menú es: ${plato.tipoDeMenu}</button>
                         <p style="font-size: 25px; font-weight: bold; font-family: Patrick Hand;">$${plato.precio}</p>
-                        <button id="${plato.id}" class="btn btn-success comprar" style="background-color:#428C60; color:#D6FFE7; border:0px; font-family: Montserrat; text-transform: uppercase;"> Comprar </button>
+                        <button id="${plato.id}" class="btn btnAgregarAlPedido agregar"> Agregar al pedido </button>
                     </div>
                 </div>
             </div>
@@ -125,19 +125,37 @@ function renderizarPlato(plato) {
 
 let carrito = [];
 
-// Evento clic a los botones de compra
-
+// Evento clic a los botones de compra + Tostify
 function agregarEventoClic() {
-    let botones = document.getElementsByClassName('comprar');
+    let botones = document.getElementsByClassName('agregar');
 
     for (const boton of botones) {
         boton.addEventListener('click', () => {
             const prodACarro = platos.find((plato) => plato.id == boton.id);
             agregarAlCarrito(prodACarro);
             guardarCarritoEnLocalStorage();
+
+            // Toastify
+
+
+            Toastify({
+                text: `🤩 ✅ ${prodACarro.nombre} fue agregado al pedido`,
+                duration: 3000,
+                newWindow: true,
+                close: false,
+                gravity: "right",
+                position: "center", 
+                style: {
+                    background: "linear-gradient(to right, #e8fcab, #92e842)",
+                    'text-align': 'center', 
+                    'font-family': 'Montserrat',
+                    'color':'#424242',
+                },
+            }).showToast();
         });
     };
 }
+
 
 // Agregar platos al carrito
 
@@ -163,6 +181,7 @@ for (const plato of platos) {
 }
 agregarEventoClic();
 
+
 // Eliminar platos al carrito
 
 function eliminarDelCarrito(id) {
@@ -171,6 +190,8 @@ function eliminarDelCarrito(id) {
     guardarCarritoEnLocalStorage();
 }
 
+
+// Actualizar tabla del carrito
 function actualizarTabla() {
     tablaBody.innerHTML = '';
     carrito.forEach(plato => {

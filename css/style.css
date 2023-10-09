@@ -113,6 +113,14 @@ body.dark {
       text-transform: uppercase;
    }
 
+.btnAgregarAlPedido {
+   background-color: #428C60;
+      color: #D6FFE7;
+      border: 0px;
+      font-family: "Montserrat";
+      text-transform: uppercase;
+}
+
    .btnPago {
       background-color: #428C60;
       color: #D6FFE7;
@@ -310,6 +318,14 @@ body.light {
 
 
    .btnComprar {
+      color: #428C60;
+      background-color: #D6FFE7;
+      border: 0px;
+      font-family: "Montserrat";
+      text-transform: uppercase;
+   }
+
+   .btnAgregarAlPedido {
       color: #428C60;
       background-color: #D6FFE7;
       border: 0px;
